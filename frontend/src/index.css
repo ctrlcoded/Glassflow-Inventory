@@ -15,12 +15,18 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('/background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.08; /* Soft background opacity */
     z-index: -1;
+  }
+
+  /* Only load the heavy background image on desktop to save mobile bandwidth/LCP */
+  @media (min-width: 768px) {
+    body::before {
+      background-image: url('/background.png');
+    }
   }
 }
 
