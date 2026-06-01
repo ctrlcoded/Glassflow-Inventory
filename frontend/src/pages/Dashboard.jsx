@@ -56,7 +56,17 @@ export default function Dashboard() {
   }, []);
 
   if (loading) {
-    return <div className="flex items-center justify-center h-64"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-slate-800"></div></div>;
+    return (
+      <div className="space-y-6 animate-in fade-in duration-300">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">Overview</h2>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">Here is what's happening with your inventory today.</p>
+        </div>
+        <div className="flex items-center justify-center h-64">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-slate-800"></div>
+        </div>
+      </div>
+    );
   }
 
   return (

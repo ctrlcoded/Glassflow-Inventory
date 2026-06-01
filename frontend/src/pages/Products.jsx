@@ -82,7 +82,21 @@ export default function Products() {
     p.sku.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) return <div className="flex items-center justify-center h-64"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-slate-800"></div></div>;
+  if (loading) {
+    return (
+      <div className="space-y-6 animate-in fade-in duration-300">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">Inventory</h2>
+            <p className="text-slate-500 dark:text-slate-400 mt-1">Manage your product catalog.</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center h-64">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-slate-800"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out">
